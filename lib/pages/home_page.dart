@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:job_finder/theme.dart';
+import 'package:job_finder/widget/floating_button_home.dart';
 import 'package:job_finder/widget/popular_job_card.dart';
+import 'package:job_finder/widget/recommendation_job_card.dart';
 
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: lightGreyColor,
+      floatingActionButton: FloatingButtonHome(),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: SafeArea(
         child: ListView(
           children: [
@@ -149,7 +153,92 @@ class HomePage extends StatelessWidget {
                         ),
                       ],
                     ),
-                  )
+                  ),
+                  SizedBox(
+                    height: 32,
+                  ),
+                  Text(
+                    'Recommendation Job',
+                    style: titleTextStyle.copyWith(
+                      fontSize: 18,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 16,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(right: defaultMargin),
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [
+                            RecommendationJobCard(
+                              company: 'Tokopedia',
+                              jobType: 'Onsite',
+                              jobTitle: 'Sr. UI Designer',
+                              jobSite: 'Jakarta, Indonesia',
+                            ),
+                            SizedBox(
+                              width: 15,
+                            ),
+                            RecommendationJobCard(
+                              company: 'Gojek',
+                              jobType: 'Onsite',
+                              jobTitle: 'Software Engineer',
+                              jobSite: 'Jakarta, Indonesia',
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 16,
+                        ),
+                        Row(
+                          children: [
+                            RecommendationJobCard(
+                              company: 'Youtube',
+                              jobType: 'Onsite',
+                              jobTitle: 'Project Manager',
+                              jobSite: 'California, USA',
+                            ),
+                            SizedBox(
+                              width: 15,
+                            ),
+                            RecommendationJobCard(
+                              company: 'Shopee',
+                              jobType: 'Remote',
+                              jobTitle: 'UI UX Designer',
+                              jobSite: 'Singapore',
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 16,
+                        ),
+                        Row(
+                          children: [
+                            RecommendationJobCard(
+                              company: 'Bukalapak',
+                              jobType: 'Onsite',
+                              jobTitle: 'Sr. Principle Engineer',
+                              jobSite: 'Jakarta, Indonesia',
+                            ),
+                            SizedBox(
+                              width: 15,
+                            ),
+                            RecommendationJobCard(
+                              company: 'Blibli',
+                              jobType: 'Onsite',
+                              jobTitle: 'R & D Principle Engineer',
+                              jobSite: 'Jakarta, Indonesia',
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 66,
+                  ),
                 ],
               ),
             ),
